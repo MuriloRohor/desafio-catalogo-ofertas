@@ -23,6 +23,10 @@ Execute o comando abaixo para instalar as dependências do projeto:
 ```bash
 pip install -r requirements.txt
 ```
+
+> ℹ️ **Atenção:**  
+> Para utilizar as variáveis de ambiente, renomeie o arquivo `.env.template` para `.env` e preencha os valores necessários antes de seguir as instruções do projeto.
+
 #### 3. Subir o banco de dados com Docker e rodar migrações
 
 Vai inicie o container Docker para o banco de dados e em seguida executar as migrações para configurar o banco de dados
