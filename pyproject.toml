@@ -1,0 +1,8 @@
+[tool.taskipy.tasks]
+start-db = "docker compose up db -d"
+stop-db = "docker compose down db"
+run = "task start-db && python3 manage.py runserver 127.0.0.1:8000"
+test-scrapper = "python scrapper/ml_scrapper.py"
+wait-db = "until docker compose exec db pg_isready -U postgres; do echo 'Esperando pelo banco de dados...'; sleep 2; done"
+migrates = "python manage.py migrate"
+init = "task start-db && task wait-db && task migrates && task run"
